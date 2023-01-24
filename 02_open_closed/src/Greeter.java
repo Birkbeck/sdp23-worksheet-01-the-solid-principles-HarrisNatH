@@ -17,3 +17,47 @@ public class Greeter {
         this.formality = formality;
     }
 }
+
+/*fix */
+public interface Formality{
+    void response(); 
+}
+
+public class formal implements Formality{
+    @Override
+    public void response(){
+        return "Good Evening";
+    }
+}
+
+public class casual implements Formality{
+    @Override
+    public void response(){
+        return "Goodday?";
+    }
+}
+
+public class intimate implements Formality{
+    @Override
+    public void response(){
+        return "Hello Darling!";
+    }
+}
+
+public class Greet{
+    public void greet(Formality formality){
+        if (Formality==null){
+            return "Hello";
+        }
+        formality.response();
+    } 
+}
+
+public class Greeter{
+    public void static main (String[] args){
+        new Greet().greet(new casual());
+        new Greet().greet(new intimate());
+        new Greet().greet(new formal());
+        new Greet().greet();
+    }
+}

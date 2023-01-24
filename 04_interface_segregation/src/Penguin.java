@@ -11,10 +11,14 @@ public class Penguin implements Bird {
         this.numberOfFeathers -= 1;
     }
 
-    @Override
-    public void fly() {
-        throw new UnsupportedOperationException();
-    }
+    /*
+     * since penguin class inherits Bird class that only has molt method
+     * there is no need for fly method
+     */
+    // @Override
+    // public void fly() {
+    //     throw new UnsupportedOperationException();
+    // }
 
     public void swim() {
         this.currentLocation = "in the water";
